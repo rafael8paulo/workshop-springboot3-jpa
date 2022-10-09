@@ -4,19 +4,20 @@ import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
+
 @Entity
 @Table(name = "tb_user")
-public class User  implements Serializable {
+public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto incremento
-    private long id;
+    private Long id;
     private String nome;
     private String email;
     private String phone;
     private String password;
 
-    public User(long id, String nome, String email, String phone, String password) {
+    public User(Long id, String nome, String email, String phone, String password) {
         this.id = id;
         this.nome = nome;
         this.email = email;
@@ -24,11 +25,7 @@ public class User  implements Serializable {
         this.password = password;
     }
 
-    public User(String nome, String email, String phone, String password) {
-        this.nome = nome;
-        this.email = email;
-        this.phone = phone;
-        this.password = password;
+    public User() {
     }
 
     public long getId() {
