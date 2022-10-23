@@ -25,7 +25,7 @@ public class Order implements Serializable {
 
     private Integer orderStatus;
 
-    @OneToMany(mappedBy = "id.order")
+    @OneToMany(mappedBy = "id.order") //OderItem -> ID
     private Set<OrderItem> items = new HashSet<>();
 
     public Order() {
